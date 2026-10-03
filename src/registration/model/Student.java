@@ -6,10 +6,7 @@ import java.util.List;
 
 import registration.util.Validator;
 
-/**
- * Standard student. INHERITS from {@link Person}.
- * getMaxCourses() is overridable so a subclass can change the limit.
- */
+
 public class Student extends Person {
     public static final int STANDARD_MAX_COURSES = 4;
 
@@ -24,12 +21,12 @@ public class Student extends Person {
     public String getProgram() { return program; }
     public void setProgram(String program) { this.program = Validator.requireText(program, "Program"); }
 
-    /** Read-only view: callers cannot modify the list directly (encapsulation). */
+
     public List<String> getEnrolledCourseCodes() {
         return Collections.unmodifiableList(enrolledCourseCodes);
     }
 
-    /** Polymorphic limit. */
+
     public int getMaxCourses() { return STANDARD_MAX_COURSES; }
 
     public boolean isAtLimit() { return enrolledCourseCodes.size() >= getMaxCourses(); }
@@ -41,7 +38,7 @@ public class Student extends Person {
         return false;
     }
 
-    /** Called by the service layer only. */
+
     public void addCourse(String code) { enrolledCourseCodes.add(code); }
     public boolean removeCourse(String code) { return enrolledCourseCodes.remove(code); }
 

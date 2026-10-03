@@ -2,10 +2,7 @@ package registration.model;
 
 import registration.util.Validator;
 
-/**
- * ABSTRACT base class (abstract-class requirement). Holds data shared by every kind
- * of person. Private fields with validated setters demonstrate ENCAPSULATION.
- */
+
 public abstract class Person {
     private final String id;
     private String name;
@@ -24,7 +21,7 @@ public abstract class Person {
     public void setName(String name) { this.name = Validator.requireText(name, "Name"); }
     public void setEmail(String email) { this.email = Validator.requireEmail(email); }
 
-    /** Polymorphic: each subclass reports its own role label. */
+
     public abstract String getRole();
 
     @Override

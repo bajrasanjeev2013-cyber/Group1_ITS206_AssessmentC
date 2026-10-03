@@ -7,10 +7,7 @@ import java.util.List;
 import registration.exception.ValidationException;
 import registration.util.Validator;
 
-/**
- * A course offering with a fixed capacity, the list of enrolled student IDs and a
- * FIFO WAITLIST (the Group 1 / odd-number personalised extension).
- */
+
 public class Course {
     private final String code;
     private String title;
@@ -50,7 +47,7 @@ public class Course {
     public boolean hasStudent(String id) { return indexOf(enrolledStudentIds, id) >= 0; }
     public boolean isOnWaitlist(String id) { return indexOf(waitlist, id) >= 0; }
 
-    /** 1-based position on the waitlist, or 0 if not waitlisted. */
+
     public int waitlistPosition(String id) { return indexOf(waitlist, id) + 1; }
 
     private static int indexOf(List<String> list, String id) {
@@ -60,7 +57,6 @@ public class Course {
         return -1;
     }
 
-    // Mutators used by the service layer
     public void addStudent(String id) { enrolledStudentIds.add(id); }
     public boolean removeStudent(String id) { return enrolledStudentIds.remove(id); }
     public void addToWaitlist(String id) { waitlist.add(id); }
