@@ -14,17 +14,14 @@ import registration.service.EnrolmentService;
 import registration.service.StudentService;
 import registration.service.WithdrawResult;
 
-/**
- * Console UI. All business rules live in the services; this class only reads input and prints.
- * Run this class as a "Java Application" in Eclipse.
- */
+
 public class Main {
     private static final Scanner IN = new Scanner(System.in);
     private static StudentService students;
     private static CourseService courses;
     private static EnrolmentService enrol;
 
-    /** Thrown when the input stream ends (for example when input is piped). */
+
     private static class EndOfInput extends RuntimeException {
         private static final long serialVersionUID = 1L;
     }
@@ -32,7 +29,7 @@ public class Main {
     private interface MenuAction { void run(); }
 
     public static void main(String[] args) {
-        // Composition root: wire concrete repositories into services through the IRepository interface.
+
         StudentRepository studentRepo = new StudentRepository();
         CourseRepository courseRepo = new CourseRepository();
         students = new StudentService(studentRepo);
@@ -63,7 +60,7 @@ public class Main {
         System.out.println("Goodbye.");
     }
 
-    /** Global error handling: business/validation errors are shown, never crash the app. */
+
     private static void run(MenuAction menu) {
         try {
             menu.run();
