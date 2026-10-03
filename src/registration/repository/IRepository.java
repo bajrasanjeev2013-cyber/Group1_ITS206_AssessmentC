@@ -2,10 +2,7 @@ package registration.repository;
 
 import java.util.List;
 
-/**
- * Generic storage contract (INTERFACE requirement). Services depend on this
- * abstraction, not on a concrete collection.
- */
+
 public interface IRepository<T> {
     void add(T item);
     void remove(String key);

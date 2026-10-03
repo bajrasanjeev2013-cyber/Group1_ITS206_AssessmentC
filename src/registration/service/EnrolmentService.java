@@ -8,11 +8,7 @@ import registration.model.Course;
 import registration.model.Student;
 import registration.repository.IRepository;
 
-/**
- * Enrolment operations + the Course Waitlist extension (Group 1 = odd number).
- * Rules: max 4 courses per student; full courses accept waitlist joins (FIFO);
- * when a seat opens, the first eligible waitlisted student is auto-enrolled.
- */
+
 public class EnrolmentService {
     private final IRepository<Student> students;
     private final IRepository<Course> courses;
@@ -98,10 +94,7 @@ public class EnrolmentService {
         return result;
     }
 
-    /**
-     * Fills one open seat from the front of the queue. Students who have since hit the
-     * course limit are skipped (and keep their place) so one blocked student never stalls the queue.
-     */
+
     private Student promoteFromWaitlist(Course c) {
         if (c.isFull()) return null;
         for (String id : new ArrayList<String>(c.getWaitlist())) {

@@ -7,7 +7,7 @@ import registration.model.Course;
 import registration.model.Student;
 import registration.repository.IRepository;
 
-/** Course management: add, update, remove, search, list offerings. */
+
 public class CourseService {
     private final IRepository<Course> courses;
     private final IRepository<Student> students;
@@ -23,7 +23,7 @@ public class CourseService {
         return course;
     }
 
-    /** Pass null/blank title or null capacity to keep the current value. */
+
     public Course update(String code, String title, Integer capacity) {
         Course c = courses.getByKey(code);
         if (title != null && !title.trim().isEmpty()) c.setTitle(title);
@@ -31,7 +31,7 @@ public class CourseService {
         return c;
     }
 
-    /** Removing a course also clears it from every affected student. */
+
     public void remove(String code) {
         Course c = courses.getByKey(code);
         for (String id : new ArrayList<String>(c.getEnrolledStudentIds())) {
@@ -45,7 +45,7 @@ public class CourseService {
     public List<Course> search(String query) { return courses.search(query); }
     public List<Course> getAll() { return courses.getAll(); }
 
-    /** Courses that still have seats. */
+
     public List<Course> getAvailable() {
         List<Course> result = new ArrayList<Course>();
         for (Course c : courses.getAll()) {

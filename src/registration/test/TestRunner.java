@@ -12,11 +12,7 @@ import registration.service.EnrolmentService;
 import registration.service.StudentService;
 import registration.service.WithdrawResult;
 
-/**
- * Dependency-free test runner (no JUnit setup needed). Each test builds a fresh system,
- * runs, and reports PASS/FAIL. Run as a "Java Application" in Eclipse.
- * Exit code is non-zero if any test fails.
- */
+
 public class TestRunner {
     private static int passed = 0;
     private static int failed = 0;

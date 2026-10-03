@@ -3,7 +3,6 @@ package registration.service;
 import registration.model.Course;
 import registration.model.Student;
 
-/** Result of a withdrawal: tells the UI who (if anyone) was promoted from the waitlist. */
 public class WithdrawResult {
     private final Student student;
     private final Course course;

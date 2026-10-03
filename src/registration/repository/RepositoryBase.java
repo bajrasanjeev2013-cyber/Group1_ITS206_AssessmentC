@@ -9,10 +9,7 @@ import registration.exception.NotFoundException;
 import registration.exception.RegistrationException;
 import registration.exception.ValidationException;
 
-/**
- * ABSTRACT generic repository backed by a case-insensitive sorted map.
- * Subclasses define how to get a key and how a search query matches (POLYMORPHISM).
- */
+
 public abstract class RepositoryBase<T> implements IRepository<T> {
     private final Map<String, T> items = new TreeMap<String, T>(String.CASE_INSENSITIVE_ORDER);
 

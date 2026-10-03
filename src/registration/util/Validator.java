@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import registration.exception.ValidationException;
 
-/** Central input validation so every rule lives in one place. */
+
 public final class Validator {
     private static final Pattern EMAIL = Pattern.compile("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$");
     private static final Pattern ID = Pattern.compile("^[A-Za-z0-9]{3,12}$");
