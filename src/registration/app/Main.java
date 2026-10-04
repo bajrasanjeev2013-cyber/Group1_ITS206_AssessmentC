@@ -1,4 +1,5 @@
 package registration.app;
+package registration.app;
 
 import java.util.List;
 import java.util.Scanner;
