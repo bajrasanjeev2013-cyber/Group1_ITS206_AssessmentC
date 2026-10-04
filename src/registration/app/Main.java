@@ -3,8 +3,6 @@ package registration.app;
 import java.util.List;
 import java.util.Scanner;
 
-import java.util.List;
-import java.util.Scanner;
 
 import registration.exception.RegistrationException;
 import registration.exception.ValidationException;
